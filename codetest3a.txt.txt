@@ -1,0 +1,37 @@
+//Programu se preko registra r1 prosledjuje adresa podataka
+//Program siftuje podatak za jedno mesto u desno i bitski pomnozi sa 1 
+// Ukoliko je rezultat 0 u ro se upisuje 1 a ako nije u r0 se upisuje 0
+100, C0  //LD #200
+101, E0
+102, 00 
+103, 02  
+104, C1  //ST R1
+105, 81
+106, 41  //JSR 300
+107, 00
+108, 03
+109, 90  //HALT
+300, C0  //LD (r1)
+301, 91
+302, 82  //ASR
+303, C6  //AND #1
+304, E0
+305, 01
+306, 00
+307, 08  //BEQL 01
+308, 01 
+309, 80  //RTS
+30A, C0  //LD #1
+30B, E0
+30C, 01
+30D, 00
+30E, C1  //ST r1
+30F, 80
+310, 80  //RTS
+200, 0C
+201, 12
+
+
+
+
+
